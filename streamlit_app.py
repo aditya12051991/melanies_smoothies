@@ -1,7 +1,7 @@
 # Import python packages
 import streamlit as st
 
-cnx = st.connection("snowflake1")
+cnx = st.connection("snowflake")
 session = cnx.session()
 
 from snowflake.snowpark.functions import col

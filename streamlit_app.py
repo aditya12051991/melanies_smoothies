@@ -11,9 +11,6 @@ st.write(
 name_on_order = st.text_input("Name on Smoothie:")
 st.write( "The Name on your Smoothie will be : ",name_on_order)
 
-# session = get_active_session()
-#session = get_active_session()
-
 cnx = st.connection("snowflake")
 session = cnx.session()
 
@@ -46,4 +43,9 @@ if ingredients_list:
 
         session.sql(my_insert_stmt).collect()
         st.success('Your Smoothie is ordered!', icon="✅")
-    
+
+# New section to display fruityvice information
+import requests
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+st.text(fruityvice_response)
+

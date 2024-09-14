@@ -1,5 +1,6 @@
 # Import python packages
 import streamlit as st
+import snowflake
 
 cnx = st.connection("snowflake")
 session = cnx.session()
